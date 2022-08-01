@@ -1,4 +1,42 @@
-@media (min-width:1024px){
+@media (max-width:1024px){
+
+    .header .nav_toggle{
+        display: inline-block;
+        
+    }
+    .header .nav ul{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #EFD372;
+        opacity: .9;
+        padding: 5%;
+        min-width: 250px;
+        height: 100%;
+    }
+
+    #nav_toggle:checked ~ ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header .nav li{
+        margin-right: 0;
+    }
+
+    .header .nav li:not(:last-child){
+        margin-bottom: 50px;
+    }
+
+    .header .nav a{
+        font-size: 25px;
+    }
+
+
+
+
+
     .about_us .about_wrapper .about_img{
         width: 45%;
     }
@@ -56,5 +94,41 @@
         width: 451px;
     }    
 
+    .catalog {
+        height: 500px;
+    }
+
+    .catalog .catalog_list .catalog_item img {
+        width: 100%;
+    }
+    .catalog .catalog_list .catalog_item .catalog_wrap {
+        top: 127px;
+        right: 30px;
+    }
+
+    .catalog .catalog_list .catalog_item p {
+        font-size: 20px;
+    }
+
+    .catalog .catalog_list .catalog_item .catalog_item_text {
+        width: 190px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo {
+        padding: 30px 40px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo h3 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input {
+        width: 260px;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic {
+        padding: 0;
+    }
 
 }
