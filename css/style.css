@@ -592,8 +592,9 @@ body{
 
 .catalog .catalog_list .catalog_item .catalog_wrap{
     position: absolute;   
-    top: 250px;
-    right: 85px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
