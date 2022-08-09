@@ -1,9 +1,9 @@
 @media (max-width:1024px){
 
     .header .nav_toggle{
-        display: inline-block;
-        
+        display: inline-block;        
     }
+
     .header .nav ul{
         display: none;
         position: fixed;
@@ -12,7 +12,7 @@
         background-color: #EFD372;
         opacity: .9;
         padding: 5%;
-        min-width: 250px;
+        min-width: 200px;
         height: 100%;
     }
 
@@ -32,10 +32,6 @@
     .header .nav a{
         font-size: 25px;
     }
-
-
-
-
 
     .about_us .about_wrapper .about_img{
         width: 45%;
@@ -128,6 +124,607 @@
     }
 
     .contact_us .contact_list .contact_wrap .contact_organic {
+        padding: 0;
+    }
+
+}
+
+@media (max-width:768px){
+    .about_us {
+        background-color: #F9F8F8;
+        height: 1148px;
+    }
+
+    .about_us .about_wrapper {
+        text-align: center;
+        display: block;
+    }
+    .about_us .about_wrapper .about_img {
+        width: 100%;
+    }
+
+    .list_item a {
+        font-size: 14px;
+    }
+
+    .list_item .list_title img {
+        margin: 0;
+    }
+    .list_item .list_position img {
+        padding-left: 10px;
+    }
+
+    .reviews .container .reviews_item .text3 {
+        padding: 0;
+    }
+    .reviews .container .achievements_block .achievements .achievements_item {
+        height: 120px;
+        width: 118px;
+    }
+    .reviews .container .achievements_block .achievements .achievements_item2 {
+        width: 111px;
+        height: 111px;
+    }
+    .reviews .container .achievements_block .achievements .achievements_item2 h3 {
+        font-size: 28px;
+        line-height: 44px;
+    }
+    .reviews .container .achievements_block .achievements .achievements_item2 p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .offer_products .container .view_all h3 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .offer .fruits {
+        width: 735px;
+        height: 223px;
+        margin-right: 17px;
+    }
+
+    .offer .vegetables {
+        width: 735px;
+        height: 223px;
+    }
+
+    .offer_text {
+        padding-left: 20px;
+    }
+
+    .our_products {
+        height: 1000px;
+    }
+
+    .our_products .product_list {
+        margin: 60px 0;
+    }
+
+    .list_item {
+        height: 429px;
+        width: 228px;
+    }
+
+    .offer_products .container .button_order {
+        width: 230px;
+        height: 72px;
+    }
+
+    .eco_friendly {
+        height: 551px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper img {
+        width: 80%;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm {
+        opacity: 0.9;
+        left: 90px;
+        height: 474px;
+        width: 440px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm {
+        border-radius: 30px 30px 30px 30px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm .eco_farm {
+        padding: 40px 50px 50px 50px;
+    }
+    
+    .catalog .catalog_list .catalog_item .catalog_wrap {
+        top: 86px;
+        right: 20px;
+    }
+
+    .catalog .catalog_list .catalog_item .catalog_item_text {
+        width: 150px;
+    }
+
+    .catalog .catalog_list .catalog_item p {
+        font-size: 18px;
+    }
+
+
+    .subscribe .subscribe_promo .catalog_promo h3 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input {
+        width: 220px;
+        height: 57px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input::placeholder{
+        font-size: 14px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email .button_order{
+        height: 57px;
+        width: 158px;
+        font-size: 14px;
+    }
+
+    .contact_us {
+        height: 480px;
+    }
+
+    .contact_us h3 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .contact_us p {
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic .contact_social a {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width:768px){
+
+    .header .header_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .header .nav {
+        margin-left: 30px;
+    }
+
+    .header .cart {
+        margin-top: 0;
+        margin-left: 35px;
+    }
+
+    .promo h3 {
+        font-size: 50px;
+        line-height: 57px;
+        padding-right: 100px;
+    }
+
+    .offer .fruits,
+    .offer .vegetables{
+        width: 340px;
+    }
+    .offer .fruits{
+    margin-bottom: 20px;
+    }
+
+    .about_us .about_wrapper .about_img img {
+        width: 290px;
+        height: 260px;
+    }
+
+    .about_us .about_wrapper .about_text h3 {
+        font-size: 31px;
+        line-height: 38px;
+    }
+}
+
+
+@media (max-width:550px){
+    .header .cart {
+        margin-top: 20px;
+        margin-left: 0; 
+    }
+
+    .promo {
+        height: 597px;
+    } 
+
+    .promo h3 {
+        padding-right: 0;
+    }
+
+    .offer .offer_wrapper {
+        display: block;
+    }
+
+    .about_us {
+        height: 1280px;
+    }
+
+    .about_us .about_wrapper .about_img img {
+        width: 250px;
+        height: 230px;
+    }
+
+    .about_us .about_wrapper .about_text .p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .about_us .about_wrapper .about {
+        display: block;
+    }
+
+    .about_us {
+        height: 1280px;
+    }
+
+    .about_us .button_order {
+        margin: 20px auto;
+    }
+
+    .eco_friendly {
+        height: 470px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm h3 {
+        font-size: 30px;
+        line-height: 28px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm .farm_text h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm {
+        width: 290px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm .eco_farm {
+        padding: 20px 30px 20px 25px;
+    }
+    
+
+    .our_products{
+        height: 2500px;
+    }
+
+    .product_list1, .product_list2 {
+        flex-wrap: wrap;
+    }
+
+    .list_item {
+        height: 385px;
+        width: 255px;
+    }
+
+    .list_item:not(:first-child) {
+        margin-left: 0;
+    }
+
+    .reviews {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 1280px;
+    }
+
+    .reviews .container {
+        display: block;
+    }
+
+    .reviews .container .achievements {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .reviews .container .achievements_block .achievements .achievements_item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .reviews .container .achievements_block .achievements .achievements_item {
+        margin: 7px;
+    }
+
+    .offer_products {
+        height: 1500px;
+    }
+
+    .catalog {
+        height: 1000px;
+    }
+
+    .catalog .catalog_list .catalog_item:not(:last-child) {
+        margin-right: 0; 
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .catalog .catalog_list {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+    }
+
+    .catalog .catalog_list .catalog_item img {
+        width: 231px;
+        height: 291px;
+    }
+
+    .catalog .catalog_list .catalog_item .catalog_wrap {
+        top: 115px;
+        right: 40px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo {
+        padding: 5px 0px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo {
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .subscribe .subscribe_promo {
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo h3 {
+        display: none;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input {
+        width: 140px;
+        height: 35px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input::placeholder{
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email .button_order {
+        height: 35px;
+        width: 140px;
+        font-size: 11px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email .button_order img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic .img_logo{
+        width: 40%;
+    }
+
+    .contact_us h3 {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic .contact_social a img{
+        width: 15px;
+        height: 15px;
+    }
+    .contact_us .contact_list .contact_wrap .contact_organic .contact_social a{
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact_us .contact_list .contact_wrap .utility {
+        margin-left: 3px;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact {
+        margin-right: 3px;
+    }
+}
+
+@media (max-width:390px){
+
+    .offer .fruits, .offer .vegetables {
+        width: 300px;
+    }
+
+    .about_us {
+        height: 1350px;
+    }
+    
+    .offer_products .container {
+        text-align: center;
+    }
+
+    .offer_products .container .view_all {
+        flex-wrap: wrap;
+    }
+
+    .offer_products .container .view_all {
+        justify-content: center;
+    }
+
+    .eco_friendly {
+        height: 410px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm .farm_text p {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm {
+        left: 4px;
+        height: 363px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper .farm h3 {
+        font-size: 23px;
+        line-height: 22px;
+        margin-bottom: 10px;
+    }
+
+    .eco_friendly .eco_friendly_wrapper img {
+        width: 300px;
+        height: 430px;
+    }
+
+    .contact_us .contact_list .contact_wrap {
+        display: block;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact {
+        border-right: none;         
+        text-align: center;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    .contact_us {
+        height: 250px;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact .contact_item:not(:first-child) {
+        margin-top: 0;
+    }
+
+    .contact_us h3 {
+        margin-bottom: 10px;
+    }
+    
+    .contact_us .contact_list .contact_wrap .contact_organic .img_logo {
+        display: none;
+    }
+
+    .contact_organic .img_logo{
+        display: none;
+    }
+
+    .contact_organic p{
+        display: none;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic {
+        width: 100%;
+    }
+
+    .contact_us .contact_list .contact_wrap .contact_organic .contact_social {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .contact_us .contact_list .contact_wrap .utility {
+        display: none;
+    }
+
+    .contact_us .map {
+        height: 155px;
+    }
+
+    .header .header_wrapper {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .header .header_wrapper .logo a img{
+        display: none;
+    }
+    .header .header_wrapper .basket img{
+        width: 36px;
+        height: 36px;
+    }
+
+    .header .header_wrapper .basket{
+        padding: 5px;
+    }
+    .header .cart {
+        margin: 0;
+    }
+
+    .header .nav ul{
+        min-width: 150px;
+    }
+
+    .promo h3 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .offer .fruits, .offer .vegetables {
+        width: 255px;
+    }
+
+    .offer h3 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .about_us {
+        height: 1450px;
+    }
+
+    .our_products {
+        height: 2600px;
+    }
+
+    .reviews .container .achievements_block .achievements .achievements_item {
+        height: 99px;
+        width: 97px;
+    }
+
+    .reviews .container .achievements_block .achievements .achievements_item2 {
+        width: 90px;
+        height: 90px;
+    }
+
+    .reviews .container .achievements_block .achievements .achievements_item2 h3 {
+        font-size: 23px;
+        line-height: 28px;
+    }
+
+    .offer_products {
+        height: 1540px;
+    }
+
+}  
+@media (max-width:320px){
+    
+    .eco_friendly .eco_friendly_wrapper img {
+        width: 264px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input {
+        width: 100px;
+        height: 40px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email input::placeholder{
+        font-size: 7px;
+    }
+
+    .subscribe .subscribe_promo .catalog_promo .email .button_order{
+        width: 100px;
+        height: 40px;
         padding: 0;
     }
 
