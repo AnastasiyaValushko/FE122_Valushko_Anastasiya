@@ -1,4 +1,5 @@
-@media (max-width:1024px){
+
+@media (max-width:1420px){
 
     .header .nav_toggle{
         display: inline-block;        
@@ -66,7 +67,8 @@
    }
    
    .eco_friendly .eco_friendly_wrapper img {
-    width: 50%;
+    width: 512px;
+    height: 501px;
    }
 
    .eco_friendly .eco_friendly_wrapper .farm h3 {
@@ -118,6 +120,9 @@
         font-size: 40px;
         line-height: 45px;
     }
+    .subscribe .subscribe_promo{
+        background-size: cover;
+    }
 
     .subscribe .subscribe_promo .catalog_promo .email input {
         width: 260px;
@@ -129,7 +134,7 @@
 
 }
 
-@media (max-width:768px){
+@media (max-width:1060px){
     .about_us {
         background-color: #F9F8F8;
         height: 1148px;
@@ -287,9 +292,6 @@
         width: 50px;
         height: 50px;
     }
-}
-
-@media (max-width:768px){
 
     .header .header_wrapper {
         flex-wrap: wrap;
@@ -330,7 +332,7 @@
 }
 
 
-@media (max-width:550px){
+@media (max-width:715px){
     .header .cart {
         margin-top: 20px;
         margin-left: 0; 
@@ -345,7 +347,7 @@
     }
 
     .offer .offer_wrapper {
-        display: block;
+        flex-wrap: wrap;
     }
 
     .about_us {
@@ -542,7 +544,37 @@
     }
 }
 
-@media (max-width:390px){
+@media (max-width:713px){
+    .product_list1, .product_list2 {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .our_products .product_list {
+        margin: 60px 0;
+        text-align: center;
+    }
+    .offer_wrapper{
+        text-align: center;
+    }
+
+    .catalog .catalog_list .catalog_item .catalog_wrap {
+        top: 40%;
+        right: 35%;
+    }
+
+    .offer_wrapper .text{
+        text-align: left;
+    }
+    .offer_wrapper .view_all h3{
+        text-align: left;
+    }
+
+    .catalog .catalog_list{
+        display: block;
+    }
+}
+
+@media (max-width:440px){
 
     .offer .fruits, .offer .vegetables {
         width: 300px;
@@ -575,7 +607,7 @@
 
     .eco_friendly .eco_friendly_wrapper .farm {
         left: 4px;
-        height: 363px;
+        height: 382px;
     }
 
     .eco_friendly .eco_friendly_wrapper .farm h3 {
@@ -706,8 +738,12 @@
         height: 1540px;
     }
 
+    .catalog .catalog_list .catalog_item .catalog_wrap {
+        right: 20%;
+    }
+
 }  
-@media (max-width:320px){
+@media (max-width:377px){
     
     .eco_friendly .eco_friendly_wrapper img {
         width: 264px;
