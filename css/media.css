@@ -93,7 +93,7 @@
     }    
 
     .catalog {
-        height: 500px;
+        height: 700px;
     }
 
     .catalog .catalog_list .catalog_item img {
@@ -216,7 +216,9 @@
     .eco_friendly {
         height: 551px;
     }
-
+    .eco_friendly .eco_friendly_wrapper{
+    justify-content: center;
+    }
     .eco_friendly .eco_friendly_wrapper img {
         width: 80%;
     }
@@ -323,10 +325,10 @@
 }
 
 
-@media (max-width:715px){
+@media (max-width:717px){
     .header .cart {
-        margin-top: 20px;
-        margin-left: 0; 
+        margin-top: 0;
+        margin-left: 20px; 
     }
 
     .promo {
@@ -389,11 +391,6 @@
         padding: 20px 30px 20px 25px;
     }
     
-
-    .our_products{
-        height: 2500px;
-    }
-
     .product_list1, .product_list2 {
         flex-wrap: wrap;
     }
@@ -528,9 +525,10 @@
     .contact_us .contact_list .contact_wrap .contact {
         margin-right: 3px;
     }
-}
 
-@media (max-width:713px){
+    .our_products {
+        height: 1500px;
+    }
     .product_list1, .product_list2 {
         display: inline-block;
         margin: 0 auto;
@@ -555,7 +553,18 @@
     }
 }
 
+@media (max-width:640px){
+    .our_products {
+        height: 2570px;
+    }
+    .header .cart {
+        margin-left: 0; 
+    }
+}
+
 @media (max-width:440px){
+
+    
 
     .offer .fruits, .offer .vegetables {
         width: 300px;
@@ -587,7 +596,8 @@
     }
 
     .eco_friendly .eco_friendly_wrapper .farm {
-        left: 4px;
+        left: 0;
+        top: 0;
         height: 382px;
     }
 
@@ -725,6 +735,10 @@
     .eco_friendly .eco_friendly_wrapper img {
         width: 264px;
     }
+    
+    .eco_friendly .eco_friendly_wrapper .farm {
+        height: 100%;
+    }
 
     .subscribe .subscribe_promo .catalog_promo .email input {
         width: 100px;
@@ -740,5 +754,14 @@
         height: 40px;
         padding: 0;
     }
+}
 
+@media (max-width: 280px){
+    .reviews {
+    height: 1460px;
+    }
+
+    .eco_friendly {
+        height: 470px
+    }
 }
