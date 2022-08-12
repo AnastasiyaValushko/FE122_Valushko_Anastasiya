@@ -1,4 +1,4 @@
-let sum = 0;
+sum = 0;
 
 for (let i = 0; ;i++){
     let v = prompt('Введите число');
