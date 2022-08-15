@@ -8,13 +8,9 @@ for(let i = 0; i < arr.length; i++){
 
 arr = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7];
 for(let i = 0; i < arr.length; i++){
-    if(arr[i] <= -10){
-        continue;
-    }
-    if(arr[i] >= -3){
-        continue;
-    }
+    if(arr[i] > -10 && arr[i] < -3){
     console.log(arr[i]);
+    }
 }
 
 
@@ -108,18 +104,22 @@ for(i = 0; i < arr.length; i++){
 }
 console.log(sum);
 
-// //task11
-// let height = 0;
-// a = prompt('Введите высоту треугольника');
-// for(i = 0; i < height; i++){
-//     for(let j = height; j > i; j--){
-//         a == ' ';
-//     }
-//     for(let j = 0; j < 2 * i + 1; j++){
-//         a == '^'
-//     }
-//     a == '\height'
-// }   
+//task11
+i = 0,
+j = 0;
+let height = prompt('Введите высоту треугольника');
+let empty = "",
+    star = "";
+
+while (i < height) {
+  empty = "";
+  star = "";
+    for (j = 0; j < height - i; j++) empty += " ";
+    for (j = 0; j < 2 * i + 1; j++) star += "^";
+  console.log(empty + star);
+  i++;
+}
+
 
 
 
