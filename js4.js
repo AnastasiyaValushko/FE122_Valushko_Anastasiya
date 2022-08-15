@@ -5,15 +5,12 @@ for(let i = 0; i < arr.length; i++){
 }
 
 //task2
-
 arr = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7];
 for(let i = 0; i < arr.length; i++){
     if(arr[i] > -10 && arr[i] < -3){
     console.log(arr[i]);
     }
 }
-
-
 
 //task3
 let arr2 = [];
@@ -32,12 +29,11 @@ let i = 0;
 }
 
 //task4
+
 let arr3 = ['10', '20', '30', '50', '235', '3000'];
 for (let i = 0; i < arr3.length; i++) {
-    let num = (arr3[i]);
-    let first = num[0];
-    if (first == 1 || first == 2 || first == 5) {
-      console.log(num);
+    if(arr3[i][0] == 1 || arr3[i][0] == 2 || arr3[i][0] == 5){
+    console.log(arr3[i]);
     }
 }
 
