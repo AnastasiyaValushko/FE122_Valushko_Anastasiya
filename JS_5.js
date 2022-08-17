@@ -53,7 +53,7 @@ showArray();
 console.log('Task5--------');
 
 function isEven(a){
-    if (a % 2 == 0){
+    if (a % 2 === 0){
         return true;
     }else{
         return false;
@@ -66,26 +66,90 @@ console.log(result);
 //task6
 console.log('Task6--------');
 
-function createArray2(length){
-    array = [];
-    for(var i = 1; i <= length; i++){
-        array.push(i); 
+function createArray2(arr){
+    let array = [];
+    for(var i = 0; i < arr.length; i++){
+        if (isEven(arr[i])){
+            array.push(arr[i]);
+            
+        }
+        console.log(array);
     }
-    
 }
-createArray2();
+createArray2(10);
 
 
 
 
-// //task7
-// console.log('Task7--------');
+//task7
+console.log('Task7--------');
 
-// function createArray(length){
-//     var array = [];
-//     for(var i = 1; i <= length; i++){
-//         array.push(i);
-//         console.log(array);
+// function createPyramid(height){
+//     for (var i = 1; i <= height; i++) {
+//         var str = '';
+
+//         for (var j = 0; j < i; j++);{
+//         str += symbol == undefined ? i : symbol;
+//         }
+//         console.log(str + '\height');
 //     }
-// }
-// createArray(3);
+    
+// };
+// createPyramid(prompt('число'));
+
+function createPyramid(height){
+    i = 0,
+    j = 0;
+    let empty = "",
+        star = "";
+
+    while (i < height) {
+    i++;
+    empty = "";
+    star = "";
+        for (j = 0; j < height - 1; j++) empty += " ";
+        for (j = 0; j < 2 * i + 1; j++) star += height;
+        console.log(empty + star);
+    }
+}
+createPyramid(5);
+
+
+//task8
+console.log('Task8--------');
+
+
+//task9
+console.log('Task9--------');
+
+function createArray3(a){
+    let array = [];
+    for(var i = 0; i < a; i++){
+        if(i == 0 || i == 1){
+            array[i] = 1;
+        }else{
+            array[i] = array[i -1] + array[i - 2];
+        }
+    }
+    return array;
+}
+let result3 = createArray3(16);
+console.log(result3);
+
+//task10
+console.log('Task10--------');
+
+let num = 16;
+function printSum(a){
+    var arr = a.split('');
+    var sum = 0;
+    for(var i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    if(sum > 9){
+        printSum(sum + '');
+    }else{
+        console.log(sum);
+    }
+}
+printSum(num);
