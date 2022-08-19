@@ -59,7 +59,7 @@ function isEven(a){
         return false;
     }
 }
-var result = isEven(6);
+var result = isEven(10);
 console.log(result);
 
 
@@ -71,31 +71,15 @@ function createArray2(arr){
     for(var i = 0; i < arr.length; i++){
         if (isEven(arr[i])){
             array.push(arr[i]);
-            
         }
-        console.log(array);
     }
+    return(array);
 }
-createArray2(10);
-
-
+console.log(createArray2(10));
 
 
 //task7
 console.log('Task7--------');
-
-// function createPyramid(height){
-//     for (var i = 1; i <= height; i++) {
-//         var str = '';
-
-//         for (var j = 0; j < i; j++);{
-//         str += symbol == undefined ? i : symbol;
-//         }
-//         console.log(str + '\height');
-//     }
-    
-// };
-// createPyramid(prompt('число'));
 
 function createPyramid(num, symbol){
     let arr = [];
@@ -112,11 +96,54 @@ function createPyramid(num, symbol){
     }
     return arr;
 }
-console.log(createPyramid());
+console.log(createPyramid(10, '*'));
 
 //task8
 console.log('Task8--------');
 
+function createPyramid2(height){
+
+    let arr = [];
+    for (let i = 0; i < height * 2; i++){
+        let n = '';
+        let m = '';
+        for (let j = 0; j < height * 2 - i; j++){
+            n += ' '; 
+        }
+        for (let j = 0; j < 2 * i + 1; j++){
+            m += '*';
+        }
+        arr.push(n+m);
+        i++
+    }
+    return arr;
+}
+
+console.log(createPyramid2(15));
+
+
+// //task8.2
+// // console.log('Task8.2--------');
+
+// function createPyramid3(height){
+
+//     let arr = [];
+//     for (let i = 0; i < height * 2; i++){
+//         let n = '';
+//         let m = '';
+//         for (let j = 0; j < height * 2 + i; j--){
+//             n += ' '; 
+//         }
+//         for (let j = 0; j < 2 * i + 1; j--){
+//             m += '*';
+//         }
+//         arr.push(n+m);
+//         i++
+//     }
+//     return arr;
+// }
+
+// console.log(createPyramid3(15));
 
 //task9
 console.log('Task9--------');
@@ -143,20 +170,36 @@ console.log(result3);
 //task10
 console.log('Task10--------');
 
-// let num = 16;
-// function printSum(a){
-//     var arr = a.split('');
-//     var sum = 0;
-//     for(var i = 0; i < arr.length; i++){
-//         sum += arr[i];
-//     }
-//     if(sum > 9){
-//         printSum(sum + '');
-//     }else{
-//         console.log(sum);
-//     }
-// }
-// printSum(num);
+function printSum(a){
+    
+    var sum = 0;
+    var arr = String(a).split('');
+    for(var i = 0; i < arr.length; i++){
+        sum += parseInt(arr[i]); //разбирает строковый аргумент и возвращает целое число
+    }
+    if(sum > 9){
+        return printSum(sum) ;
+    }else{
+        return sum;
+    }
+}
+
+let num = 178;
+let result4 = printSum(num);
+console.log(result4);
+
+
+//task11
+console.log('Task11--------');
+
+function createArr(array){
+    console.log(array[i]);
+    i++;
+    if(i < array.length) createArr(array);
+    var i = 0;
+}
+createArr([1,2,4,5,6]);
+
 
 
 //task12
@@ -184,7 +227,7 @@ function t12(name, surname, lastName, num){
     console.log(ramka + '\n' + title + '\n' + subTitle + '\n' + nameText + '\n' + ramka);
 
 }
-t12('Nastya', 'Valushka', 'Viktorovna', 'FE122');
+t12('Nastya', 'Valushko', 'Viktorovna', 'FE122');
 
 function makeString(str, l){
     for(let i = str.length; i < l; i++){
@@ -265,3 +308,4 @@ function t13(str){
 
     return 'Почтовый адрес верен';
 }
+
