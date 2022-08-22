@@ -94,7 +94,7 @@ console.log(getPhone('+37544558115656'));
 console.log('task9-----------------');
 
 function getEmail(email){
-    let regexp2 = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.]{2,11})+\.([A-Za-z]{2,11})$/gi; //Знаки «^» и «$» обозначают начало и конец проверяемой строки
+    let regexp2 = /^([A-Za-z0-9_\-\.]{2,})+\@([A-Za-z0-9_\-\.]{2,11})+\.([A-Za-z]{2,11})$/gi; //Знаки «^» и «$» обозначают начало и конец проверяемой строки
     return regexp2.test(email);
 }
 console.log(getEmail('nastya.valushko@yandex.ru'));
@@ -104,9 +104,13 @@ console.log(getEmail('nastya.valushko@yandex.ru'));
 console.log('task10-----------------');
 
 function domainName(url){
-    let u = /^(?:[^:]+:\/\/[^.\/?#]+\.[^.\/?#]+)\.([^.\/?#]+)(?:$|[\/?#])/;
-    const dom = s => s.match(u)[0];
-    return dom(url);
-};
+    RegExp = /^(https?:\/\/[0-9]?[a-z]?[a-z0-9]+(?:\.?[a-z0-9]+\.[a-z]{2,11}))(\/.+\/)?(\?[^#]+)?([^#]+)/gm;
+    let groups = RegExp.exec(url);
+    console.log(groups);
+    let rez = [];
 
-console.log(domainName("https://tech.onliner.by/2018/04/26/smart-do-200/"));
+    for(let i = 1; i < groups.length; i++){
+        rez.push(groups[i]);
+    }
+    return rez;
+};
