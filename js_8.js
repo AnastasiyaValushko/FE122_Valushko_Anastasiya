@@ -1,4 +1,5 @@
-
+let html = document.querySelector('html');
+html.setAttribute('lang', 'en');
 
 let title = document.createElement('title');
 title.innerHTML = 'Call_to_Action';
