@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(226, 182, 169);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .todo{
+    background-color: white;
+    border: 5px dotted rgb(228, 231, 231);
+    border-radius: 10%;
+}
+
+.container .todo .list{
+    margin: 30px;
+}
+
+.container .todo .list .checkbox{
+    width: 30px;
+    height: 30px;
+    
+}
+
+.container .todo .list .todo-text{
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.fa-solid fa-trash-can{
+    width: 100px;
+    height: 100px;
+}
+
+.container h1{
+    font-family: 'Merienda', cursive;
+    font-weight: 700px;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(228, 231, 231);
+}
+
+.container .todo .list .list-text{
+    height: 30px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.container .todo .list .trash{
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.container .todo .list ul li{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container .todo .list ul{
+    padding: 0;
+}
+
+.container .todo .button{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container .todo button{
+    height: 30px;
+    width: 100px;
+}
