@@ -1,8 +1,7 @@
 window.addEventListener('load', function(){
     console.log('Страница загружена')
 
-    let checkbox = document.querySelector('.checkbox');
-    
+      
     // Array.from(checkbox).forEach(function(e){
     //     e.addEventListener('click', function(e){
     //         e.target.value = 'FOCUS';
@@ -13,14 +12,7 @@ window.addEventListener('load', function(){
     // });
 
     
-    checkbox.addEventListener('mousedown', function(){
-        checkbox.style.backgroundColor = 'rgb(226, 182, 169)';
-    });
-
-    let checked = document.querySelector('li');
-    
-
-    let input = document.querySelector('input.list-text');
+    let input = document.querySelector('.list-text');
     let ul = document.querySelector('ul.todos');
 
 
