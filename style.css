@@ -12,10 +12,21 @@ body{
     background-color: white;
     border: 5px dotted rgb(228, 231, 231);
     border-radius: 10%;
+    margin-top: 100px;
 }
 
 .container .todo .list{
     margin: 30px;
+    
+}
+.container .todo .list .listBtn{
+    display: flex;
+}
+
+.container .todo .list .btn{
+    width: 40px;
+    height: 36px;
+    margin-left: 10px;
 }
 
 .container .todo .list .checkbox{
@@ -59,6 +70,10 @@ body{
 .container .todo .list .trash{
     margin-right: 10px;
     cursor: pointer;
+}
+
+.checked {
+    text-decoration: line-through;
 }
 
 .container .todo .list ul li{

@@ -3,9 +3,6 @@ window.addEventListener('load', function(){
     
     let input = document.querySelector('.list-text');
     let ul = document.querySelector('ul.todos');
-    let ButtonAdd = document.getElementsByClassName('btn');
-
-
 
     function createToDo(){
     
@@ -15,14 +12,19 @@ window.addEventListener('load', function(){
         elem.append();
 
         let li = document.createElement('li');
+        let checkbox = document.createElement('input');
+        checkbox.classList.add('checkbox');
+        checkbox.setAttribute('type', 'checkbox');
         let text = document.createElement('span');
         text.classList.add('todo-text');
         let newToDo = input.value;
         text.append(newToDo);
+        li.append(checkbox);
+
+        let editable = text.contentEditable;
+        text.contentEditable = 'true';
         
         
-
-
         let deleteButton = document.createElement('span');
         deleteButton.classList.add('trash');
         let icon = document.createElement('i');
@@ -34,6 +36,7 @@ window.addEventListener('load', function(){
         listenDeleteTodo(deleteButton);
     }
 
+    
     function listenDeleteTodo(element){
         element.addEventListener('click', (event)=> {
             element.parentElement.remove();
@@ -42,21 +45,41 @@ window.addEventListener('load', function(){
     }
 
     function onClickToDo(event){
-        if (event.target.tagName === 'li'){
-            event.target.classList.toggle('checked');
-        }
-    }
-  
+            event.target.parentElement.classList.toggle('checked');
+    }     
+    
 
+    let btn = document.querySelector('.btn');
+    btn.addEventListener("click", createToDo);
 
-    input.addEventListener("keypress", (keyPressed) => {
+   
+    input.addEventListener("keypress", function(elem){
         const keyEnter = 13;
-        if (keyPressed.which == keyEnter) {
-                createToDo();
+        if (elem.which == keyEnter) {
+            createToDo();
         }
     });
-        
+
     ul.addEventListener('click', onClickToDo);
+
+    let saveButton = document.querySelector("button.save");
+    let clearButton = document.querySelector("button.clear");
+
+    saveButton.addEventListener('click', function(){
+        localStorage.setItem('todos', ul.innerHTML);
+    });
+
+        clearButton.addEventListener("click", function(){
+        ul.innerHTML = "";
+        localStorage.removeItem('todos', ul.innerHTML);
+    });
+
+    
+
+    
+
+
+    
     
 });
 
