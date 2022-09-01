@@ -1,31 +1,28 @@
 window.addEventListener('load', function(){
     console.log('Страница загружена')
-
-      
-    // Array.from(checkbox).forEach(function(e){
-    //     e.addEventListener('click', function(e){
-    //         e.target.value = 'FOCUS';
-    //     });
-    //     e.addEventListener('blur', function(e){
-    //         e.target.value = '';
-    //     });
-    // });
-
     
     let input = document.querySelector('.list-text');
     let ul = document.querySelector('ul.todos');
+    let ButtonAdd = document.getElementsByClassName('btn');
+
 
 
     function createToDo(){
+    
+        let elem = document.createElement('input');
+        elem.getAttribute('type', 'checkbox');
+        elem.classList.add('elem');
+        elem.append();
 
-        
         let li = document.createElement('li');
         let text = document.createElement('span');
         text.classList.add('todo-text');
         let newToDo = input.value;
         text.append(newToDo);
-
         
+        
+
+
         let deleteButton = document.createElement('span');
         deleteButton.classList.add('trash');
         let icon = document.createElement('i');
