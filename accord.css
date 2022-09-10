@@ -1,0 +1,46 @@
+.wrapper{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper .accordeon_container{
+    transition: .5s;
+}
+
+.wrapper .accordeon_button{
+    padding: 10px;
+    padding-left: 30px;
+    background: gray;
+    font-size: 20px;
+    position: relative;
+}
+
+.wrapper .accordeon_button::after{
+    display: block;
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    left: 10px;
+    top: calc(50% - 7px);
+    transform: rotate(-45deg);
+}
+
+.wrapper .accordeon_button.active::after{
+    top: calc(50% - 4px);
+    transform: rotate(135deg);
+}
+
+.wrapper .accordeon_content{
+    overflow: hidden;
+    height: 0;
+    font-size: 20px;
+    transition: .3s linear;
+}
+
+.wrapper .accordeon_content.active{
+    height: auto;
+}
