@@ -1,0 +1,18 @@
+.tooltips {
+    position: relative;
+}
+
+.tooltips .tooltip_element{
+    border-bottom: 1px dashed #000;
+    background: rgba(255, 255, 0, 0.424);
+}
+
+.tooltips .tooltip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(153, 205, 50, 0.606);
+    max-width: 200px;
+}
