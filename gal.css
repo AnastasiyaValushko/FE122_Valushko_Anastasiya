@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.BtnContainer{
+    padding: 10px;
+}
+
+.BtnContainer .btn{
+    padding: 10px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: calc(33.33% - 20px);
+    padding: 10px;
+}
+
+.content img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.content2{
+    display: none;
+}
+
+.row .active{
+    display: block;
+}
