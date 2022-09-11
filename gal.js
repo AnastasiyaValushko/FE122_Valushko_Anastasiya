@@ -29,3 +29,4 @@ const tabs = function (selector) {
         tabHandler(tabButtons, contents)
     });
 }
+tabs('.container');
