@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: #ededed;
+}
+
+.portfolio__filter {
+    display: flex;
+}
+
+.portfolio__filter li{
+    margin: 10px;
+    list-style: none;
+    background-color: #ededed;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.portfolio__filter li:hover{
+    background-color:rgb(255, 255, 255);
+    transition: .4s;
+}
+
+.portfolio__list li{
+    list-style: none;
+}
+
+.portfolio__list{
+    display: flex;
+}
+
+.content{
+    display: none;
+}
+
+.list .active{
+    display: block;
+}

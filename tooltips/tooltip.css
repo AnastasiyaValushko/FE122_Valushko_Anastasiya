@@ -1,0 +1,15 @@
+.tooltip_element{
+    color: blue;
+    text-decoration: underline blue;
+    cursor: pointer;
+}
+
+.tooltips {
+    position: relative;
+}
+
+.tooltips .tooltip{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
