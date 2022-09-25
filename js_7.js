@@ -26,5 +26,18 @@ let Teapot = function(){
     };
 };
 
-let teapot = new Teapot();
-teapot.get();
+let Teapot2 = function(){
+    Teapot.apply(this, arguments);
+    this.show = function(){
+        if(this.size == 0 || this.size == undefined){
+            alert('Водонагреватель не включен');
+        } else{
+            alert('Время нагрева воды = ' + this.result + ' минут');
+        }
+    }
+}
+
+let teapot = new Teapot(),
+    teapot2 = new Teapot2();
+
+teapot2.get();
