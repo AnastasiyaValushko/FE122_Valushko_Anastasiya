@@ -13,7 +13,7 @@ let phone = document.getElementById("phone");
 
 class Contacts {
     constructor(data){
-        this.user = [data[0]];
+        this.user = [];
     }
 
     add(contacts) {
@@ -29,7 +29,7 @@ class Contacts {
     }
 
     edit(id,obj){
-
+        
     }
     
 }
@@ -43,9 +43,9 @@ class User {
         this.phone = data.phone;
     }
 
-    // edit (obj) {
-    //     return data; 
-    // }
+    set edit(obj) {
+        this.data = obj; 
+    }
 
     get info() {
         return this.name + ' (' + this.email + ', ' + this.address + ', ' + this.phone + ')';
