@@ -183,7 +183,7 @@ class ContactsApp extends Contacts{
                         address: contactAddress.innerText,
                         phone: contactPhone.innerText,
                     }
-                    this.onEdit(contact.data.id, data);
+                    this.edit(contact.data.id, data);
                     console.log(this.contacts);
                 }
             });
