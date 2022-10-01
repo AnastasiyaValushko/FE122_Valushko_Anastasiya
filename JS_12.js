@@ -83,7 +83,7 @@ class Contacts{
     set storage(data){
         let dataJson = JSON.stringify(data);
         localStorage.setItem('contacts', dataJson);
-        this.storageExpiration = 10;
+        this.storageExpiration = 864000;
     }
 
     get storageExpiration(){
@@ -100,7 +100,7 @@ class Contacts{
         let options = {
             path: '/',
             secure: true,
-            'max-age': 3600
+            'max-age': time
         };
         
         if (options.expires instanceof Date) {
@@ -122,7 +122,7 @@ class Contacts{
 }
 
 class ContactsApp extends Contacts{
-    constructor(selector){
+    constructor(){
         super();
         this.app = null;
         this.contactsContainer2 = null;
