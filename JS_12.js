@@ -1,23 +1,24 @@
 class User {
-    #data;
     constructor(data) {
-        if(data.name.length > 0) this.#data = data;   
+        if(data.name.length > 0) this._data = data;   
     }
 
     edit(data){
         
-        Object.assign(this.#data, data);
+        Object.assign(this._data, data);
     }
 
     get data(){
-        return this.#data;
+        return this._data;
     }
 
     set data(data){
-        console.log(this.#data);
+        console.log(this._data);
         console.log(data);
-        Object.assign(this.#data, data);
+        Object.assign(this._data, data);
     }
+
+
 }
 
 class Contacts{
@@ -65,6 +66,59 @@ class Contacts{
     get contacts(){
         return this.#contacts;
     }
+
+    get storage() {
+        if(!localStorage.getItem('contacts')) return false;
+
+        if(this.storageExpiration){
+            localStorage.removeItem('contacts');
+            return false;
+        }
+
+        let data = localStorage.getItem('contacts');
+        data = JSON.parse(data);
+        return data;
+    }
+
+    set storage(data){
+        let dataJson = JSON.stringify(data);
+        localStorage.setItem('contacts', dataJson);
+        this.storageExpiration = 10;
+    }
+
+    get storageExpiration(){
+        let name = 'contacts'
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches || false;
+    }
+
+    set storageExpiration(time){
+        let name = 'contacts';
+        let value = 'contacts';
+        let options = {
+            path: '/',
+            secure: true,
+            'max-age': 3600
+        };
+        
+        if (options.expires instanceof Date) {
+            options.expires = options.expires.toUTCString();
+        }
+        
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        
+        for (let optionKey in options) {
+            updatedCookie += "; " + optionKey;
+            let optionValue = options[optionKey];
+            if (optionValue !== true) {
+              updatedCookie += "=" + optionValue;
+            }
+        }
+        
+        document.cookie = updatedCookie;
+    }
 }
 
 class ContactsApp extends Contacts{
@@ -72,11 +126,12 @@ class ContactsApp extends Contacts{
         super();
         this.app = null;
         this.contactsContainer2 = null;
-        this.init(selector);
+        this.init();
     }
 
     init(){
         this.app = document.querySelector('body');
+
         let contactsContainer = this.createElement('div', [
             ['class', 'contacts']
         ]);
@@ -116,6 +171,7 @@ class ContactsApp extends Contacts{
 
             this.add(data);
             this.onAdd();
+            this.storage = this.contacts;
             nameInput.value = '';
             emailInput.value = '';
             addressInput.value = '';
@@ -128,9 +184,17 @@ class ContactsApp extends Contacts{
         ]);
             
         contactsContainer.append(formContainer, this.contactsContainer2);
-         
 
         this.app.append(contactsContainer);
+
+        if(this.storage){
+            let data = this.storage;
+            data.forEach(contact => {
+                Object.keys(contact).forEach(key => this.add(contact[key]));
+            })
+
+            this.onAdd();
+        }
 
     }
 
@@ -184,6 +248,7 @@ class ContactsApp extends Contacts{
                         phone: contactPhone.innerText,
                     }
                     this.edit(contact.data.id, data);
+                    this.storage = this.contacts;
                     console.log(this.contacts);
                 }
             });
@@ -191,6 +256,7 @@ class ContactsApp extends Contacts{
             onRemove.addEventListener('click', () => {
                 this.remove(contact.data.id);
                 this.onAdd();
+                this.storage = this.contacts;
             });         
 
             contactElem.append(contactName,contactEmail,contactAddress, contactPhone, onEdit, onRemove);
