@@ -25,6 +25,7 @@ class Contacts{
     #contacts;
     constructor(){
         this.#contacts = [];
+        
     }
 
     add(obj){
@@ -65,59 +66,6 @@ class Contacts{
 
     get contacts(){
         return this.#contacts;
-    }
-
-    get storage() {
-        if(!localStorage.getItem('contacts')) return false;
-
-        if(this.storageExpiration){
-            localStorage.removeItem('contacts');
-            return false;
-        }
-
-        let data = localStorage.getItem('contacts');
-        data = JSON.parse(data);
-        return data;
-    }
-
-    set storage(data){
-        let dataJson = JSON.stringify(data);
-        localStorage.setItem('contacts', dataJson);
-        this.storageExpiration = 864000;
-    }
-
-    get storageExpiration(){
-        let name = 'contacts'
-        let matches = document.cookie.match(new RegExp(
-            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-        return matches || false;
-    }
-
-    set storageExpiration(time){
-        let name = 'contacts';
-        let value = 'contacts';
-        let options = {
-            path: '/',
-            secure: true,
-            'max-age': time
-        };
-        
-        if (options.expires instanceof Date) {
-            options.expires = options.expires.toUTCString();
-        }
-        
-        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-        
-        for (let optionKey in options) {
-            updatedCookie += "; " + optionKey;
-            let optionValue = options[optionKey];
-            if (optionValue !== true) {
-              updatedCookie += "=" + optionValue;
-            }
-        }
-        
-        document.cookie = updatedCookie;
     }
 }
 
@@ -195,8 +143,9 @@ class ContactsApp extends Contacts{
 
             this.onAdd();
         }
-
+        this.getData();
     }
+    
 
     onAdd(){
         this.contactsContainer2.innerHTML = '';
@@ -223,8 +172,8 @@ class ContactsApp extends Contacts{
 
             let onEdit = this.createElement('button', [], 'Edit');
             let onRemove = this.createElement('button', [], 'Remove');
+            
             let flag = true;
-
             onEdit.addEventListener('click', () => {
                 if (flag){
                     contactName.contentEditable = true;
@@ -275,6 +224,70 @@ class ContactsApp extends Contacts{
             elem.innerHTML = content;
         }
         return elem;
+    };
+
+    get storage() {
+        if(!localStorage.getItem('contacts')) return false;
+
+        if(!this.storageExpiration){
+            localStorage.removeItem('contacts');
+            return false;
+        }
+
+        let data = localStorage.getItem('contacts');
+        data = JSON.parse(data);
+        return data;
+    }
+
+    set storage(data){
+        let dataJson = JSON.stringify(data);
+        localStorage.setItem('contacts', dataJson);
+        this.storageExpiration = 864000;
+    }
+
+    get storageExpiration(){
+        let name = 'contacts'
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches || false;
+    }
+
+    set storageExpiration(time){
+        let name = 'contacts';
+        let value = 'contacts';
+        let options = {
+            path: '/',
+            secure: true,
+            'max-age': time
+        };
+        
+        if (options.expires instanceof Date) {
+            options.expires = options.expires.toUTCString();
+        }
+        
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        
+        for (let optionKey in options) {
+            updatedCookie += "; " + optionKey;
+            let optionValue = options[optionKey];
+            if (optionValue !== true) {
+              updatedCookie += "=" + optionValue;
+            }
+        }
+        
+        document.cookie = updatedCookie;
+    }
+
+    async getData() {
+        
+        let url = 'https://jsonplaceholder.typicode.com/users';
+
+        await fetch(url).then(function(response) {
+            return response.json();
+        }).then(function(data){
+            console.log(data);
+        });
     };
 }
 
