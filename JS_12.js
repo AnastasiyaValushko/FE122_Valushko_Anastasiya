@@ -13,8 +13,6 @@ class User {
     }
 
     set data(data){
-        console.log(this._data);
-        console.log(data);
         Object.assign(this._data, data);
     }
 
@@ -33,7 +31,6 @@ class Contacts{
 
         let contact = new User(obj);
         let id = this.getRandomId();
-        contact.data = {id};
         this.#contacts.push(contact);
         return this;
     }
@@ -77,7 +74,7 @@ class ContactsApp extends Contacts{
         this.init();
     }
 
-    init(){
+    async init(){
         this.app = document.querySelector('body');
 
         let contactsContainer = this.createElement('div', [
@@ -142,10 +139,24 @@ class ContactsApp extends Contacts{
             })
 
             this.onAdd();
+        }else{
+            this.getData();
         }
-        this.getData();
     }
     
+    getData(){
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(resp => resp.json())
+            .then(data => {
+                data.forEach(contact => {
+                    const {name, username, email, address, phone} = contact;
+                    this.add({name, username, email, address, phone})
+                });
+                this.storage = this.contacts;
+                this.onAdd();
+            });
+
+    }
 
     onAdd(){
         this.contactsContainer2.innerHTML = '';
@@ -279,16 +290,7 @@ class ContactsApp extends Contacts{
         document.cookie = updatedCookie;
     }
 
-    async getData() {
-        
-        let url = 'https://jsonplaceholder.typicode.com/users';
-
-        await fetch(url).then(function(response) {
-            return response.json();
-        }).then(function(data){
-            console.log(data);
-        });
-    };
+    
 }
 
 new ContactsApp('.contacts')
